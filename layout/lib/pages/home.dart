@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:layout/pages/detail.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
 
 class HompPage extends StatefulWidget {
   // const HompPage({ Key? key }) : super(key: key);
@@ -19,25 +21,29 @@ class _HompPageState extends State<HompPage> {
       body: Padding(
           padding: const EdgeInsets.all(20),
           child: FutureBuilder(
-            builder: (context, snapshot) {
-              var data = json.decode(snapshot.data.toString());
+            builder: (context, AsyncSnapshot snapshot) {
+              // var data = json.decode(snapshot.data.toString());
               return ListView.builder(
                 itemBuilder: (BuildContext contextm, int index) {
                   return Column(
                     children: [
-                      MyBox(data[index]['title'], data[index]['subtitle'],
-                          data[index]['image_url'], data[index]['detail']),
+                      MyBox(
+                          //ใส่ snapshot.data แทน data เพื่อดึงข้อมูล
+                          snapshot.data[index]['title'],
+                          snapshot.data[index]['subtitle'],
+                          snapshot.data[index]['image_url'],
+                          snapshot.data[index]['detail']),
                       SizedBox(
                         height: 20,
                       )
                     ],
                   );
                 },
-                itemCount: data.length,
+                itemCount: snapshot.data.length,
               );
             },
-            future:
-                DefaultAssetBundle.of(context).loadString('assets/data.json'),
+            future: getData(),
+            // future: DefaultAssetBundle.of(context).loadString('assets/data.json'),
           )),
     );
   }
@@ -106,5 +112,15 @@ class _HompPageState extends State<HompPage> {
         ],
       ),
     );
+  }
+
+  Future getData() async {
+    // function getData
+    // https://raw.githubusercontent.com/chinapat/InfoAPI/main/data.json
+    var url = Uri.https(
+        'raw.githubusercontent.com', '/chinapat/InfoAPI/main/data.json');
+    var response = await http.get(url);
+    var result = json.decode(response.body);
+    return result;
   }
 }
