@@ -8,13 +8,6 @@
 },
 
 {
-    "title":"Machine Learning ?",
-    "subtitle":"การศึกษาวิธีการคิด (algorithm) ที่ใช้ในการเรียนรู้...",
-    "image_url":"https://www.fusionsol.com/wp-content/uploads/sites/22/2020/10/Marhine-Learining-1560x780.png",
-    "detail":"Machine Learning คือระบบที่สามารถเรียนรู้ได้จากตัวอย่างด้วยตนเองโดยปราศจากการป้อนคำสั่งของโปรแกรมเมอร์ ความก้าวหน้าในครั้งนี้มาพร้อมกับความคิดที่ว่าเครื่องคอมพิวเตอร์สามารถเรียนรู้เพียงแค่จากข้อมูลอย่างเดียวเพื่อที่จะผลิตผลลัพธ์ที่แม่นยำออกมาได้\n\nMachine Learning ประกอบได้ด้วยข้อมูลและเครื่องมือทางสถิติเพื่อทำนาบผลลัพธ์ออกมา ผลลัพธ์ในที่นี้ถูกใช้เพื่อทำประโยชน์กับภายในองค์กรเชิงลึกต่อไป Machine Learning เกี่ยวข้องอย่างมากกับ การทำเหมืองข้อมูล (Data mining) และ โมเดลการทำนายของ Bayes ( Bayesian predictive models) เครื่องคอมพิวเตอร์จะรับข้อมูลเข้ามาและใช้อัลกอริทึมเพื่อหาคำตอบขึ้น"
-
-},
-{
     "title":"Deep Learning ?",
     "subtitle":"การทำความเข้าใจองค์ความรู้(knowledge)ในเชิงลึก...",
     "image_url":"https://trueid-ugc-prod.b-cdn.net/partner_files/trueidintrend/202388/Deep%20Learning%20%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3%20__%20%281%29.png",
